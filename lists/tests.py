@@ -9,7 +9,7 @@ from lists.models import Item, List
 
 class HomePageTest(TestCase):
 
-    def test_root_url_resolves_to_home_page(self):
+    def test_root_url_resolves_to_home_page_view(self):
         found = resolve('/')
         self.assertEqual(found.func, home_page)
 
@@ -119,7 +119,7 @@ class NewItemTest(TestCase):
         correct_list = List.objects.create()
 
         response = self.client.post(
-            '/lists/%d/add_item/' % (correct_list.id,),
+            '/lists/%d/add_item' % (correct_list.id,),
             data={'item_text': 'A new item for an existing list'}
         )
 
