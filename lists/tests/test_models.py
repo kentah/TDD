@@ -40,7 +40,7 @@ class ItemModelTest(TestCase):
 
     def test_list_ordering(self):
         list1 = List.objects.create()
-        item1 = Item.objects.create(list=list1, text='l1')
+        item1 = Item.objects.create(list=list1, text='i1')
         item2 = Item.objects.create(list=list1, text='item 2')
         item3 = Item.objects.create(list=list1, text='3')
         self.assertEqual(
